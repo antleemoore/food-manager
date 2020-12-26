@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('partials/head') %>
+		<link rel="stylesheet" href="/css/new.css" />
+	</head>
+	<body>
+		<div class="container">
+			<h1>Create A Product</h1>
+			<form action="/products" method="POST">
+				<div class="input-group mb-3">
+					<label for="name">Name:</label>
+					<input class="form-control" id="name" type="text" name="name" />
+				</div>
+				<div class="input-group mb-3 product-price">
+					<label for="price">Unit Price ($):</label>
+					<input
+						class="form-control"
+						id="price"
+						type="number"
+						step="any"
+						name="price"
+					/>
+				</div>
+				<div class="input-group mb-3">
+					<label for="category">Category</label>
+					<select class="form-select" id="category" name="category" id="">
+						<% for(let category of categories){ %>
+						<option value="<%=category%>"><%=category%></option>
+						<% } %>
+					</select>
+				</div>
+				<span>
+					<button class="btn btn-success">Submit</button>
+					<a class="btn btn-secondary" href="/products">Back</a>
+				</span>
+			</form>
+		</div>
+	</body>
+</html>

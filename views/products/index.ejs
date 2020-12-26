@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('partials/head') %>
+		<link rel="stylesheet" href="/css/index.css" />
+	</head>
+	<body>
+		<div class="container">
+			<span>
+				<h1>Food Manager</h1>
+				<h2>For Storing and Managing Food Items In A List</h2>
+				<!-- prettier-ignore -->
+				<h3>
+					<% if(products.length !== 0) { %> 
+					<%= category %> Products
+					<% } else {%>
+						No Products Stored.  Add A New Item with New Food Button.
+						<% } %> 
+				</h3>
+			</span>
+			<ul class="list-group list-group-flush">
+				<% for (let product of products) { %>
+				<li class="list-group-item">
+					<a class="product-name" href="/products/<%= product._id%>"
+						><%= product.name %>
+					</a>
+					<form
+						action="/products/<%=product._id%>?_method=DELETE"
+						method="POST"
+					>
+						<button class="button btn-danger btn-sm">
+							<i class="fas fa-trash"></i>
+						</button>
+					</form>
+					<a
+						class="button btn-info btn-sm"
+						href="/products/<%= product._id%>/edit"
+					>
+						<i class="fas fa-edit"></i>
+					</a>
+				</li>
+				<% } %>
+			</ul>
+			<%if(category === 'All') { %>
+			<a class="products-button btn btn-primary" href="/products/new">New Food</a>
+			<% } %> <%if(category !== 'All') { %>
+			<a class="products-button btn btn-primary" href="/products">Show All</a>
+			<% } %>
+		</div>
+	</body>
+</html>

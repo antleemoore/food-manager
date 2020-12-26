@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('partials/head') %>
+		<link rel="stylesheet" href="/css/details.css" />
+	</head>
+
+	<body>
+		<div class="container">
+			<h1><%= product.name %></h1>
+			<ul class="list-group">
+				<li class="list-group-item">
+					Price: $<%= product.price %><%=product.price -
+					Math.floor(product.price) !== 0 &&
+					(product.price*10/(Math.floor(product.price*10))) === 1 ? '0' : ''%>
+				</li>
+				<li class="list-group-item">
+					Category:
+					<a href="/products?category=<%= product.category %>"
+						><%= product.category %></a
+					>
+				</li>
+			</ul>
+			<a class="btn btn-secondary" href="/products">Back</a>
+		</div>
+		<!-- <a href="/products/<%=product._id%>/edit">Edit</a>
+		<form action="/products/<%=product._id%>?_method=DELETE" method="POST">
+			<button>delete</button>
+		</form> -->
+	</body>
+</html>

@@ -1,0 +1,25 @@
+body {
+	background-color: antiquewhite;
+}
+.container {
+	padding: 2em;
+}
+h1 {
+	text-align: center;
+	padding: 1em;
+}
+.product-price {
+	width: 50%;
+}
+label {
+	padding-right: 1em;
+}
+span a {
+	float: right;
+}
+
+@media (max-width: 767px) {
+	.product-price {
+		width: 100%;
+	}
+}

@@ -1,0 +1,19 @@
+body {
+	background-color: antiquewhite;
+}
+h1 {
+	text-align: center;
+	padding: 1em;
+}
+li {
+	font-size: 2em;
+}
+a {
+	color: rgb(0, 180, 180);
+}
+.container {
+	padding: 2em;
+}
+div > a {
+	margin-top: 1em;
+}

@@ -1,0 +1,51 @@
+body {
+	background-color: antiquewhite;
+}
+h1,
+h2,
+h3 {
+	display: inline-block;
+	text-align: center;
+}
+h3 {
+	padding-top: 1em;
+}
+.btn-primary {
+	background-color: darkcyan;
+	border-color: darkcyan;
+}
+.btn-primary:hover {
+	background-color: rgb(0, 180, 180);
+	border-color: rgb(0, 180, 180);
+}
+.products-button {
+	margin-top: 2em;
+	width: min-content;
+}
+span {
+	display: grid;
+	padding-bottom: 0.25em;
+}
+li .button {
+	float: right;
+	margin-right: 1em;
+	cursor: pointer;
+	color: white;
+	text-align: center;
+}
+li .button i {
+	color: white;
+}
+li .product-name {
+	color: rgb(0, 180, 180);
+	width: 60%;
+	display: inline-block;
+	font-weight: bold;
+}
+.container {
+	padding: 2em;
+}
+.list-group-item {
+	justify-content: center;
+	display: flex;
+}
