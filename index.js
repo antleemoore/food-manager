@@ -33,12 +33,16 @@ app.get('/', (req, res) => {
 });
 app.get('/products', async (req, res) => {
 	const { category } = req.query;
-	if (category) {
-		const products = await Product.find({ category });
-		res.render('products/index', { products, category: `"${category}"` });
-	} else {
-		const products = await Product.find({});
-		res.render('products/index', { products, category: 'All' });
+	try {
+		if (category) {
+			const products = await Product.find({ category });
+			res.render('products/index', { products, category: `"${category}"` });
+		} else {
+			const products = await Product.find({});
+			res.render('products/index', { products, category: 'All' });
+		}
+	} catch (e) {
+		console.log('error with finding products');
 	}
 });
 
