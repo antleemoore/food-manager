@@ -19,6 +19,7 @@ mongoose
 	})
 	.catch((e) => {
 		console.log('connection error');
+		console.log(e);
 	});
 
 app.set('views', path.join(__dirname, 'views'));
