@@ -1,7 +1,7 @@
 const express = require('express'),
 	app = express(),
 	path = require('path'),
-	port = 3000,
+	port = process.env.PORT || 3000,
 	mongoose = require('mongoose'),
 	Product = require('./models/ProductSchema'),
 	methodOverride = require('method-override'),
