@@ -5,7 +5,7 @@ const express = require('express'),
 	mongoose = require('mongoose'),
 	Product = require('./models/ProductSchema'),
 	methodOverride = require('method-override'),
-	categories = ['fruit', 'vegetable', 'dairy'];
+	categories = ['fruit', 'vegetable', 'dairy', 'other'];
 
 require('dotenv').config();
 mongoose
