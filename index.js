@@ -9,14 +9,11 @@ const express = require('express'),
 
 require('dotenv').config();
 mongoose
-	.connect(
-		'mongodb+srv://admin:CtGwFp6J7eNpbtZU@products-cluster.jr2jn.mongodb.net/products?retryWrites=true&w=majority',
-		{
-			useNewUrlParser: true,
-			useUnifiedTopology: true,
-			useCreateIndex: true,
-		}
-	)
+	.connect(process.env.DATABASE_URL, {
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+		useCreateIndex: true,
+	})
 	.then(() => {
 		console.log('connection open');
 	})
